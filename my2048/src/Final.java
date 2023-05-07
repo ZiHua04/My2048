@@ -270,6 +270,6 @@ public class Final  extends JFrame implements KeyListener{
     }
     
     public static void main(String[] args) {
-        Final a = new Final();
+        new Final();
     }
 }
