@@ -159,6 +159,6 @@ public class my2048{
         
     }
     public static void main(String[] args) throws InterruptedException{
-        MyFrame b =new MyFrame();
+        new MyFrame();
     }
 }
