@@ -45,7 +45,15 @@ public class Final  extends JFrame implements KeyListener{
             x = (int)(Math.random()*SIZE);
             y = (int)(Math.random()*SIZE);
         }while(board[x][y] != 0);
-        board[x][y] = 2;
+        if(((int)Math.random())*10 % 2 == 0)
+        {
+            board[x][y] = 4;
+        }
+        else
+        {
+            board[x][y] = 2;
+        }
+        
     }
 
 
