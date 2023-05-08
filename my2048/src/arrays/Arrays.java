@@ -12,6 +12,15 @@ public class Arrays{
         }while(board[x][y] != 0);
         board[x][y] = (Math.random()%2 == 0)?2:4;
     }
+    public void ShowArrays()
+    {
+        for(int i = 0; i < SIZE; i++){
+            for(int j = 0; j < SIZE; j++){
+                System.out.print(board[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
     public void moveDown()
     {
         for (int y = 0; y < SIZE; y++) {
