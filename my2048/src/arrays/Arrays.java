@@ -4,7 +4,9 @@ package arrays;
 public class Arrays{
     private int SIZE = 4;
     private int[][] board = new int[SIZE][SIZE];
-    public void addNewTile(){
+    private int[][] boardBefore = new int[SIZE][SIZE];
+    public void addNewTile()
+    {
         int x,y;
         do{
             x = (int)(Math.random()*SIZE);
@@ -14,15 +16,54 @@ public class Arrays{
     }
     public void ShowArrays()
     {
+        System.out.println("现在的数组:");
         for(int i = 0; i < SIZE; i++){
             for(int j = 0; j < SIZE; j++){
                 System.out.print(board[i][j]+" ");
             }
             System.out.println();
         }
+        System.out.println();
+    }
+    public void ShowArraysBefore()
+    {
+        System.out.println("上一个数组:");
+        for(int i = 0; i < SIZE; i++){
+            for(int j = 0; j < SIZE; j++){
+                System.out.print(boardBefore[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+    public void backArrays()
+    {
+        System.out.println("撤回");
+        for(int i = 0; i < SIZE; i++){
+            for(int j = 0; j < SIZE; j++){
+                board[i][j] = boardBefore[i][j];
+            }
+        }
+    }
+    private void storeArrays()
+    {
+        for(int i = 0; i < SIZE; i++){
+            for(int j = 0; j < SIZE; j++){
+                boardBefore[i][j] = board[i][j];
+            }
+        }
+        System.out.println();
+    }
+    public int[][] getArrays()
+    {
+        return board;   
+    }
+    public int[][] getArraysBefore()
+    {
+        return boardBefore;
     }
     public void moveDown()
     {
+        storeArrays();
         for (int y = 0; y < SIZE; y++) {
             for (int x = SIZE-2; x >= 0; x--) {
                 if (board[x][y] != 0) {
@@ -58,6 +99,7 @@ public class Arrays{
     }
     public void moveUp()
     {
+        storeArrays();
         for (int y = 0; y < SIZE; y++) {
             for (int x = 1; x < SIZE; x++) {
                 if (board[x][y] != 0) {
@@ -93,6 +135,7 @@ public class Arrays{
     }
     public void moveLeft()
     {
+        storeArrays();
         for (int x = 0; x < SIZE; x++) {
             for (int y = 1; y < SIZE; y++) {
                 if (board[x][y] != 0) {
@@ -127,7 +170,8 @@ public class Arrays{
         }
     }
     public void moveRight()
-    {
+    {  
+        storeArrays();
         for(int x = 0; x < SIZE; x++){
             for(int y = SIZE-2; y >= 0; y--){
                 if(board[x][y] != 0){
