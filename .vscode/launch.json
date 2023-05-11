@@ -9,6 +9,13 @@
             "name": "My2048",
             "request": "launch",
             "mainClass": "game.My2048",
+            "projectName": "My2048_70b237f"
+        },
+        {
+            "type": "java",
+            "name": "My2048",
+            "request": "launch",
+            "mainClass": "game.My2048",
             "projectName": "My2048_b5b02a76"
         },
         {

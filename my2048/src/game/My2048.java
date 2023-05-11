@@ -14,6 +14,9 @@ public class My2048 extends JPanel implements KeyListener
     public static final int high = 400;
     public static final int width = 500;
 
+
+    private boolean moveing = false;
+
     public static BufferedImage[] images;
     public static String path = "my2048\\src\\game\\DOG.png";
     static
@@ -57,17 +60,20 @@ public class My2048 extends JPanel implements KeyListener
     }
     @Override
     public void keyTyped(KeyEvent e) {
-        // TODO Auto-generated method stub
+        if(!moveing){
+            moveing = true;
+            
+        }
         
     }
     @Override
     public void keyPressed(KeyEvent e) {
-        // TODO Auto-generated method stub
+        
         
     }
     @Override
     public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
+        
         
     }
 
